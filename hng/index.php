@@ -1,3 +1,16 @@
+<?php 
+spl_autoload_register(function ($class_name) {
+    // auto loader for functions
+    include '../functions/'.$class_name . '.php';
+});
+
+session_start() ;
+
+// print_r($_SESSION);
+if(isset($_SESSION['user'] )){
+    $user = $_SESSION['user'] ;
+}
+?>
 <!DOCTYPE html>
 <html>
 	<?php include 'includes/head.php'; ?>
